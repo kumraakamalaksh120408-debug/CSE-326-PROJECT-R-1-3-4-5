@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CaseDesk is an online legal case management
+  system: file, search and track court cases and hearings.">
+<meta name="keywords" content="legal case management, court hearings,
+  file a case, track case, India">
+<title>CaseDesk - Unstyled HTML View</title>
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<p><strong>UNSTYLED HTML VIEW</strong> - this is the same page with the stylesheet
+   removed, so only the HTML structure and content are visible.
+   <a href="index.html">Open styled website</a></p>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header id="top">
+  <a class="brand" href="#home">&#9878; Case<b>Desk</b></a>
+  <button id="menuBtn" type="button">Menu</button>
+  <nav id="nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#cases">Cases</a></li>
+      <li><a href="#hearings">Hearings</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#file">File</a></li>
+      <li><a href="#track">Track</a></li>
+      <li><a href="#lawyers">Lawyers</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <button id="themeBtn" type="button">Dark</button>
+  <a id="loginLink" class="btn" href="#login">Login</a>
+</header>
+
+<main id="main">
+
+<!-- ========== HOME / HERO ========== -->
+<section id="home" class="hero">
+  <div>
+    <p class="eyebrow">Justice &middot; Liberty &middot; Equality &middot;
+       Fraternity</p>
+    <h1>Every case, every hearing, <em>in one place.</em></h1>
+    <p>File a case, search the directory and track hearing dates
+       without standing in a queue.</p>
+    <form id="heroSearch">
+      <label for="q0" class="sr">Search cases</label>
+      <input id="q0" type="search"
+             placeholder="Search by case number, title or court">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+  <!-- SVG graphic: Ashoka Chakra (24 spokes) -->
+  <svg id="chakra" viewBox="-50 -50 100 100" width="200" height="200"
+       role="img" aria-label="Ashoka Chakra">
+    <circle r="46" fill="none" stroke="#fff" stroke-width="3"/>
+    <circle r="6" fill="#fff"/>
+    <g stroke="#fff" stroke-width="1.4">
+    <line y1="7" y2="45" transform="rotate(0)"/>
+    <line y1="7" y2="45" transform="rotate(15)"/>
+    <line y1="7" y2="45" transform="rotate(30)"/>
+    <line y1="7" y2="45" transform="rotate(45)"/>
+    <line y1="7" y2="45" transform="rotate(60)"/>
+    <line y1="7" y2="45" transform="rotate(75)"/>
+    <line y1="7" y2="45" transform="rotate(90)"/>
+    <line y1="7" y2="45" transform="rotate(105)"/>
+    <line y1="7" y2="45" transform="rotate(120)"/>
+    <line y1="7" y2="45" transform="rotate(135)"/>
+    <line y1="7" y2="45" transform="rotate(150)"/>
+    <line y1="7" y2="45" transform="rotate(165)"/>
+    <line y1="7" y2="45" transform="rotate(180)"/>
+    <line y1="7" y2="45" transform="rotate(195)"/>
+    <line y1="7" y2="45" transform="rotate(210)"/>
+    <line y1="7" y2="45" transform="rotate(225)"/>
+    <line y1="7" y2="45" transform="rotate(240)"/>
+    <line y1="7" y2="45" transform="rotate(255)"/>
+    <line y1="7" y2="45" transform="rotate(270)"/>
+    <line y1="7" y2="45" transform="rotate(285)"/>
+    <line y1="7" y2="45" transform="rotate(300)"/>
+    <line y1="7" y2="45" transform="rotate(315)"/>
+    <line y1="7" y2="45" transform="rotate(330)"/>
+    <line y1="7" y2="45" transform="rotate(345)"/>
+    </g>
+  </svg>
+</section>
+
+<section class="stats" aria-label="Statistics">
+  <p><b id="statCases">0</b>Sample cases</p>
+  <p><b id="statCourts">0</b>Courts</p>
+  <p><b id="statLawyers">0</b>Advocates</p>
+  <p><b>24</b>Spokes in the Chakra</p>
+</section>
+
+<!-- ========== HOW IT WORKS (ordered list) ========== -->
+<section id="how">
+  <h2>Plan in three steps</h2>
+  <ol class="steps">
+    <li><span class="num">1</span><strong>Register or log in.</strong>
+        Use the Login button to open your dashboard.</li>
+    <li><span class="num">2</span><strong>File your case.</strong>
+        Fill the form; every field is validated before submission.</li>
+    <li><span class="num">3</span><strong>Track it.</strong>
+        Enter the case number to see status and next hearing.</li>
+  </ol>
+</section>
+
+<!-- ========== GALLERY (images, figure, figcaption) ========== -->
+<section id="gallery" aria-labelledby="galleryTitle">
+  <h2 id="galleryTitle">Legal services in pictures</h2>
+  <p class="sub">Illustrations of courts, the Constitution and the law.
+     All images are stored inside the project folder.</p>
+  <div class="photo-gallery">
+    <figure>
+      <img src="img/gavel.svg" alt="A judge's gavel and sound block"
+           width="300" height="220">
+      <figcaption>The judge's gavel</figcaption>
+    </figure>
+    <figure>
+      <img src="img/scales.svg" alt="Scales of justice" width="300" height="220">
+      <figcaption>Justice and the rule of law</figcaption>
+    </figure>
+    <figure>
+      <img src="img/constitution-book.svg" alt="Constitution of India book"
+           width="300" height="220">
+      <figcaption>The Constitution of India</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== CASE DIRECTORY (filled by JavaScript) ========== -->
+<section id="cases">
+  <h2>Case directory</h2>
+  <p class="sub">Search by keyword or filter by type and status.
+     Select "View details" on a card.</p>
+  <div class="bar">
+    <input id="q" type="search" aria-label="Search cases"
+           placeholder="Search cases...">
+    <select id="fType" aria-label="Filter by type">
+      <option value="">All types</option>
+    </select>
+    <select id="fStatus" aria-label="Filter by status">
+      <option value="">All statuses</option>
+    </select>
+  </div>
+  <p id="count" aria-live="polite"></p>
+  <div id="grid" class="grid"></div>
+  <article id="detail" class="res" hidden></article>
+</section>
+
+<!-- ========== HEARING SCHEDULE (table) ========== -->
+<section id="hearings">
+  <h2>Hearing schedule</h2>
+  <div class="scroll">
+    <table>
+      <caption>Upcoming hearings (fictional data)</caption>
+      <thead>
+        <tr>
+          <th scope="col">Case no.</th>
+          <th scope="col">Title</th>
+          <th scope="col">Court</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody id="hbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== FILE A CASE (form) ========== -->
+<section id="file">
+  <h2>File a case</h2>
+  <p class="sub">All fields marked * are required.</p>
+  <form id="fileForm" novalidate>
+    <div class="row">
+      <div class="f">
+        <label for="name">Full name *</label>
+        <input id="name" name="name" type="text" required minlength="3">
+        <span id="err-name" class="err"></span>
+      </div>
+      <div class="f">
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" required>
+        <span id="err-email" class="err"></span>
+      </div>
+      <div class="f">
+        <label for="phone">Mobile *</label>
+        <input id="phone" name="phone" type="tel" required
+               placeholder="10 digits" maxlength="10">
+        <span id="err-phone" class="err"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="f">
+        <label for="type">Case type *</label>
+        <select id="type" name="type" required>
+          <option value="">Choose...</option>
+        </select>
+        <span id="err-type" class="err"></span>
+      </div>
+      <div class="f">
+        <label for="court">Court *</label>
+        <select id="court" name="court" required>
+          <option value="">Choose...</option>
+        </select>
+        <span id="err-court" class="err"></span>
+      </div>
+      <div class="f">
+        <label for="date">Date of incident *</label>
+        <input id="date" name="date" type="date" required
+               min="2025-01-01" max="2026-12-31">
+        <span id="err-date" class="err"></span>
+      </div>
+    </div>
+    <fieldset>
+      <legend>You are the</legend>
+      <label><input type="radio" name="role" value="Petitioner" checked>
+             <span>Petitioner</span></label>
+      <label><input type="radio" name="role" value="Respondent">
+             <span>Respondent</span></label>
+    </fieldset>
+    <div class="f">
+      <label for="desc">Case summary * <small>(min 20 characters)</small></label>
+      <textarea id="desc" name="desc" rows="4" required minlength="20"></textarea>
+      <span id="err-desc" class="err"></span>
+    </div>
+    <div class="f">
+      <label><input id="ok" type="checkbox" name="ok" required>
+             <span>I declare the details are true.</span></label>
+      <span id="err-ok" class="err"></span>
+    </div>
+    <button class="btn" type="submit">Submit filing</button>
+    <button class="btn ghost" type="reset">Reset</button>
+    <output id="fileOut" aria-live="polite"></output>
+  </form>
+  <h3>My filings in this session</h3>
+  <ul id="mine"><li>Nothing filed yet.</li></ul>
+</section>
+
+<!-- ========== TRACK A CASE (form) ========== -->
+<section id="track">
+  <h2>Track a case</h2>
+  <form id="trackForm" class="inline" novalidate>
+    <div class="f">
+      <label for="cn">Case number</label>
+      <input id="cn" name="case" type="text" required
+             placeholder="OLCMS-2026-001">
+      <span id="err-cn" class="err"></span>
+    </div>
+    <button class="btn" type="submit">Track</button>
+  </form>
+  <article id="result" aria-live="polite"></article>
+</section>
+
+<!-- ========== ADVOCATE DIRECTORY ========== -->
+<section id="lawyers">
+  <h2>Advocate directory</h2>
+  <div id="lgrid" class="grid"></div>
+  <p id="avgExp" class="sub"></p>
+</section>
+
+<!-- ========== ABOUT (article + figure + iframe) ========== -->
+<section id="about">
+  <h2>About this project</h2>
+  <div class="two">
+    <article>
+      <p class="lead">CaseDesk is a front-end academic project showing how
+         courts and citizens could manage cases online. It uses only HTML,
+         CSS and JavaScript.</p>
+      <h3>Concepts used</h3>
+      <ul>
+        <li><strong>HTML:</strong> semantic tags, forms, tables, lists, SVG,
+            audio, video, iframe, SEO meta tags.</li>
+        <li><strong>CSS:</strong> variables, Flexbox, Grid, box model,
+            pseudo-classes, transitions, animations, media queries.</li>
+        <li><strong>JavaScript:</strong> variables, data types, operators,
+            strings, numbers, conditions, functions, scope, arrays, objects.</li>
+      </ul>
+      <p><mark>Academic demonstration only.</mark> Not an official court
+         website; no legal advice is given.</p>
+    </article>
+    <figure>
+      <iframe title="Court timings" src="court-timings.html"
+              width="100%" height="150"></iframe>
+      <figcaption>Sample court timings (iframe).</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== MULTIMEDIA (audio, video, iframe) ========== -->
+<section id="media" aria-labelledby="mediaTitle">
+  <h2 id="mediaTitle">Multimedia and embedded information</h2>
+  <p class="sub">Audio, video and iframe elements. The files are stored in
+     the media folder, so they work without internet.</p>
+  <article>
+    <h3>Audio element</h3>
+    <p>Hearing reminder tone played with the audio element.</p>
+    <audio controls>
+      <source src="media/reminder.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </article>
+  <article>
+    <h3>Video element</h3>
+    <p>A short walkthrough: register, file a case and track it.</p>
+    <video controls width="480" poster="media/poster.png">
+      <source src="media/walkthrough.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+  </article>
+  <article>
+    <h3>Embedded help desk information (iframe)</h3>
+    <iframe title="Help desk information" src="help-desk.html"
+            width="100%" height="150"></iframe>
+  </article>
+</section>
+
+<!-- ========== LOGIN (form) ========== -->
+<section id="login">
+  <h2>Login</h2>
+  <p class="sub">Demo login: any valid email and a password of at least
+     8 characters that contains a number.</p>
+  <form id="loginForm" novalidate>
+    <div class="row">
+      <div class="f">
+        <label for="lemail">Email</label>
+        <input id="lemail" name="email" type="email" required>
+        <span id="err-lemail" class="err"></span>
+      </div>
+      <div class="f">
+        <label for="lpass">Password</label>
+        <input id="lpass" name="password" type="password" required
+               minlength="8">
+        <span id="err-lpass" class="err"></span>
+      </div>
+    </div>
+    <label><input id="showPw" type="checkbox"> <span>Show password</span></label>
+    <p>
+      <button class="btn" type="submit">Login</button>
+    </p>
+    <output id="loginOut" aria-live="polite"></output>
+  </form>
+</section>
+
+<!-- ========== CONTACT (form) ========== -->
+<section id="contact">
+  <h2>Contact &amp; feedback</h2>
+  <form id="contactForm" novalidate>
+    <div class="row">
+      <div class="f">
+        <label for="cname">Name *</label>
+        <input id="cname" name="name" type="text" required minlength="3">
+        <span id="err-cname" class="err"></span>
+      </div>
+      <div class="f">
+        <label for="cmail">Email *</label>
+        <input id="cmail" name="email" type="email" required>
+        <span id="err-cmail" class="err"></span>
+      </div>
+    </div>
+    <div class="f">
+      <label for="cmsg">Message *</label>
+      <textarea id="cmsg" name="msg" rows="3" required minlength="10"></textarea>
+      <span id="err-cmsg" class="err"></span>
+    </div>
+    <button class="btn" type="submit">Send message</button>
+    <output id="cOut" aria-live="polite"></output>
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>CaseDesk</strong> - a college web development project.
+     Records are fictional.</p>
+  <address>Help desk: help@casedesk.example</address>
+</footer>
+
+<a class="totop" href="#top">Top &uarr;</a>
+
+</body>
+</html>

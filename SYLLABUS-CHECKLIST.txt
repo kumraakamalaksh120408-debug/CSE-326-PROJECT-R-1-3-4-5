@@ -1,0 +1,61 @@
+SYLLABUS CHECKLIST - CaseDesk
+[x] = used in the code (file / place)
+
+HTML FUNDAMENTALS
+[x] Introduction to Internet and Web Technologies, Client-Server Architecture
+    (theory topic: explained in viva; the site is the "client" that a browser opens)
+[x] HTML5 fundamentals + document structure ... index.html: <!DOCTYPE html>, <html lang>, <head>, <body>
+[x] Elements and attributes ................... id, class, href, src, alt, type, name, required ...
+[x] Text formatting ........................... <strong>, <b>, <em>, <small>, <mark>, <br>, <address>, headings, <p>
+[x] Lists ..................................... <ul> (nav, features), <ol> (Plan in three steps)
+[x] Hyperlinks and images ..................... menu links to #sections, skip link; <img> with alt, width, height
+[x] SVG graphics .............................. Ashoka Chakra drawn with <svg>, <circle>, <line>; img/*.svg files
+[x] Multimedia: audio, video, iframe .......... #media section; court-timings.html, help-desk.html in <iframe>
+[x] SEO fundamentals .......................... <title>, meta description, meta keywords, headings, alt text
+[x] HTML best practices ....................... lowercase tags, indentation, lang, meta charset/viewport, alt, labels
+
+SEMANTIC HTML AND FORMS
+[x] Semantic elements ......................... header, nav, main, section, article, figure, figcaption, footer, address
+[x] Page structure and layout ................. header / main sections / footer
+[x] Accessibility fundamentals and standards .. skip link, label for=id, alt text, aria-label, aria-live, aria-labelledby, scope
+[x] Forms and form controls ................... <form>, <fieldset>, <legend>, <label>, <button>, <output>
+[x] Input types and attributes ................ text, email, tel, date, search, password, radio, checkbox; select, textarea;
+                                                required, minlength, maxlength, min, max, placeholder, checked, rows
+[x] Form validation basics .................... HTML attributes + JavaScript checks (getError in main.js)
+[x] Tables and data representation ............ Hearing schedule: caption, thead, tbody, th scope
+[x] Responsive content structuring ............ viewport meta tag + media queries
+
+CASCADING STYLE SHEETS (css/style.css)
+[x] Introduction to CSS ....................... external stylesheet linked with <link>
+[x] Selectors and specificity ................. element, class, id, group, descendant, adjacent sibling; comment explains specificity
+[x] Colours and backgrounds ................... hex, rgba(), named colours, linear-gradient, background-image url()
+[x] Units and measurements .................... px, rem, em, %, vw, vh, fr
+[x] Typography and text styling ............... font-family, size, weight, line-height, letter-spacing, text-transform, text-shadow, text-align
+[x] Box model ................................. margin, padding, border, border-radius, box-sizing, box-shadow
+[x] Positioning ............................... sticky (header), fixed (Top link), absolute, relative
+[x] Flexbox layout ............................ header, search bar, filter bar, inline forms
+[x] CSS Grid layout ........................... hero, statistics, steps, cards, gallery, form rows
+[x] Pseudo-classes ............................ :hover, :focus, :nth-child(even), :last-child, :checked, :root
+[x] Pseudo-elements ........................... ::before, ::after, ::first-letter, ::first-line, ::selection, ::placeholder
+[x] Attribute selectors ....................... [data-theme="dark"], input[type="checkbox"], input[type="email"]
+[x] Form styling .............................. inputs, focus state, error state (.bad), fieldset
+[x] CSS variables ............................. :root { --brand ... } and dark theme override
+[x] Responsive web design ..................... @media (max-width: 900px) and (max-width: 600px)
+[x] CSS animations ............................ @keyframes spin (chakra), rise (cards)
+[x] CSS transitions ........................... buttons, cards, nav links, form fields
+
+JAVASCRIPT FUNDAMENTALS (js/main.js)
+[x] Introduction to JavaScript ................ <script src defer>, program starts at the bottom of main.js
+[x] Variables and constants ................... const (cases, lawyers, months), let (mine, currentUser, theme)
+[x] Data types ................................ string, number, boolean, null, array, object
+[x] Operators and expressions ................. + - * / , = += , === !== < > >= , && || ! , ternary ? :
+[x] Strings and string methods ................ trim, toLowerCase, toUpperCase, split, join, includes, indexOf, lastIndexOf,
+                                                charAt, slice, startsWith, padStart
+[x] Numbers and Boolean values ................ Number(), isNaN(), toFixed(), true/false results of validation functions
+[x] Conditional statements .................... if / else, switch (statusMessage, getError), ternary
+[x] Functions ................................. declarations, function expressions as callbacks, parameters, return values
+[x] Scope ..................................... global (cases, mine), function (local variables), block (let in if / callbacks)
+[x] Arrays and array operations ............... push, filter, map, find, sort, reduce, forEach, concat, includes, join
+[x] Objects and object manipulation ........... object literals, dot and bracket access, new objects (record), arrays of objects
+(DOM lines such as getElementById, addEventListener, innerHTML, textContent are the minimum
+ needed so the page can react to the user.)

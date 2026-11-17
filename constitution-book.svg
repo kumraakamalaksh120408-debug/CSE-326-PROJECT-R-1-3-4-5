@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="Book representing the Constitution of India">
+<rect x="22" y="12" width="156" height="216" rx="8" fill="#1e3a8a" stroke="#fbbf24" stroke-width="5"/>
+<rect x="38" y="28" width="124" height="184" rx="4" fill="none" stroke="#fbbf24" stroke-width="2"/>
+<g fill="none" stroke="#fbbf24" stroke-width="2.2"><circle cx="100" cy="98" r="34"/><circle cx="100" cy="98" r="6" fill="#fbbf24"/>
+<path d="M100 64V132M66 98H134M76 74L124 122M124 74L76 122M84 68L116 128M116 68L84 128M68 86L132 110M132 86L68 110"/></g>
+<rect x="56" y="156" width="88" height="7" rx="3" fill="#fbbf24"/><rect x="70" y="170" width="60" height="5" rx="2.5" fill="#fbbf24"/><rect x="82" y="182" width="36" height="4" rx="2" fill="#fbbf24"/>
+</svg>

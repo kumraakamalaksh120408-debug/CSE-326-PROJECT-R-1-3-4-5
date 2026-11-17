@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Judge's gavel">
+<g transform="rotate(-35 100 100)">
+<rect x="48" y="40" width="96" height="46" rx="10" fill="#8a5a12" stroke="#fbbf24" stroke-width="4"/>
+<rect x="60" y="40" width="10" height="46" fill="#fbbf24"/><rect x="122" y="40" width="10" height="46" fill="#fbbf24"/>
+<rect x="90" y="86" width="12" height="96" rx="5" fill="#b45309" stroke="#fbbf24" stroke-width="3"/></g>
+<ellipse cx="100" cy="186" rx="60" ry="9" fill="#4a2f0b"/>
+</svg>

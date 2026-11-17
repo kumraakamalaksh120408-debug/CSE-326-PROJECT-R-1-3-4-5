@@ -1,0 +1,750 @@
+/* =========================================================
+   CaseDesk - css/style.css
+   Sections: 1 Variables   2 Base   3 Header + navigation
+             4 Buttons     5 Hero   6 Statistics + steps
+             7 Cards + grids   8 Table   9 Forms
+             10 Footer + extras   11 Animations
+             12 Responsive design (media queries)
+   ========================================================= */
+
+/* ---------- 1. CSS VARIABLES (custom properties) ---------- */
+:root {
+  --bg: #f6f3ec;
+  --card: #ffffff;
+  --text: #1b2433;
+  --muted: #5b6678;
+  --brand: #14325c;
+  --accent: #d9791a;
+  --line: #dcd6c8;
+  --bad: #b3261e;
+  --ok: #177245;
+  --r: 16px;
+}
+
+/* Dark theme: the same variables with new values.
+   The attribute selector matches <html data-theme="dark"> */
+:root[data-theme="dark"] {
+  --bg: #0e1522;
+  --card: #17202f;
+  --text: #e8ecf4;
+  --muted: #9aa6bb;
+  --brand: #7fa8e6;
+  --accent: #f0a04b;
+  --line: #2b384d;
+  --bad: #ff8a80;
+  --ok: #6fd49c;
+}
+
+/* ---------- 2. BASE ----------
+   Selector types used in this file:
+   universal (*), element (body), class (.card), id (#top),
+   group (h1, h2), descendant (nav a), child (ul > li),
+   adjacent sibling (label + input), attribute (input[type="email"]).
+   Specificity (low to high): element < class / attribute /
+   pseudo-class < id < inline style. Example: "#top a" beats ".brand". */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+  color: var(--brand);
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 0 0.2em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 0.3em;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 8px;
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+a {
+  color: var(--brand);
+}
+
+.sub {
+  color: var(--muted);
+}
+
+/* Pseudo-elements */
+.lead::first-letter {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.lead::first-line {
+  font-weight: 600;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+/* Hidden but readable by screen readers (accessibility) */
+.sr {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 8px;
+  top: 8px;
+  padding: 8px;
+  background: var(--card);
+  z-index: 99;
+}
+
+section {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 3.5rem 5vw;
+}
+
+/* ---------- 3. HEADER + NAVIGATION ----------
+   position: sticky keeps the header at the top while scrolling.
+   display: flex lays out the logo, menu and buttons in one row. */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 5vw;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  margin-right: auto;
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--brand);
+}
+
+.brand b {
+  color: var(--accent);
+}
+
+nav ul {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--accent);
+  color: white;
+}
+
+#menuBtn {
+  display: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+#themeBtn,
+#menuBtn {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--text);
+}
+
+/* position: fixed keeps this link in the corner of the screen */
+.totop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--card);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+/* ---------- 4. BUTTONS (transition) ---------- */
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  border: 2px solid var(--brand);
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--card);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn.ghost {
+  background: none;
+  color: var(--brand);
+}
+
+.btn.small {
+  padding: 5px 14px;
+  font-size: 0.85rem;
+}
+
+/* ---------- 5. HERO (gradient background + grid) ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: center;
+  min-height: 60vh;
+  max-width: none;
+  padding: 72px 7vw;
+  background: linear-gradient(135deg, #0f2a50, #1d4a82);
+  color: white;
+}
+
+.hero h1 {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero em {
+  color: #ffc26b;
+}
+
+.eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #ffc26b;
+}
+
+#heroSearch {
+  display: flex;
+  gap: 8px;
+  max-width: 520px;
+  margin-top: 22px;
+}
+
+#heroSearch input {
+  flex: 1;
+}
+
+#heroSearch .btn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+#chakra {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  justify-self: center;
+  animation: spin 40s linear infinite;
+}
+
+/* ---------- 6. STATISTICS + STEPS ---------- */
+.stats {
+  position: relative;
+  margin-top: -40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.stats p {
+  margin: 0;
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.stats b {
+  display: block;
+  font: 700 2rem Georgia, serif;
+  color: var(--accent);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+
+.num {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+}
+
+/* ---------- 7. CARDS, GRIDS, GALLERY ---------- */
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.bar input {
+  flex: 2 1 220px;
+}
+
+.bar select {
+  flex: 1 1 160px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 18px 18px 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: rise 0.5s both;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--accent);
+}
+
+.card h3 {
+  margin: 0.3em 0;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0.2em 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(217, 121, 26, 0.16);
+  color: var(--accent);
+}
+
+.tag.Pending {
+  background: rgba(179, 38, 30, 0.14);
+  color: var(--bad);
+}
+
+.tag.Disposed {
+  background: rgba(23, 114, 69, 0.15);
+  color: var(--ok);
+}
+
+.av {
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--card);
+  font: 700 1.2rem Georgia, serif;
+  line-height: 52px;
+  text-align: center;
+}
+
+.res {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--r);
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.photo-gallery figure {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.photo-gallery img {
+  display: block;
+  width: 100%;
+  height: 220px;
+}
+
+figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+#media article {
+  margin: 18px 0;
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+
+audio,
+video {
+  max-width: 100%;
+}
+
+iframe {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+
+/* ---------- 8. TABLE ---------- */
+.scroll {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+}
+
+caption {
+  padding: 6px 0;
+  text-align: left;
+  color: var(--muted);
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+thead th {
+  background: var(--brand);
+  color: var(--card);
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(127, 127, 127, 0.07);
+}
+
+tbody tr:hover {
+  background: rgba(217, 121, 26, 0.14);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- 9. FORM STYLING ---------- */
+form {
+  margin-top: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.f {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--brand);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(217, 121, 26, 0.25);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+}
+
+input[type="email"] {
+  text-transform: lowercase;
+}
+
+input:checked + span {
+  font-weight: 700;
+}
+
+.bad {
+  border-color: var(--bad);
+}
+
+fieldset {
+  margin-bottom: 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+}
+
+fieldset label {
+  display: inline-block;
+  margin-right: 16px;
+  font-weight: 400;
+}
+
+.err {
+  display: block;
+  min-height: 1.2em;
+  color: var(--bad);
+  font-size: 0.85rem;
+}
+
+output {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--ok);
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.inline .f {
+  flex: 1 1 240px;
+}
+
+.inline .btn {
+  margin-top: 28px;
+}
+
+/* ---------- 10. FOOTER ---------- */
+footer {
+  padding: 28px 5vw 28px 120px;
+  background: #0f2a50 url("../img/logo.svg") no-repeat 5vw center;
+  background-size: 56px;
+  color: #e8ecf4;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer address {
+  font-style: normal;
+}
+
+/* ---------- 11. ANIMATIONS (@keyframes) ---------- */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* ---------- 12. RESPONSIVE DESIGN (media queries) ----------
+   Tablet screens: up to 900px wide */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero,
+  .two,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid,
+  .photo-gallery,
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #menuBtn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 8px 5vw;
+    background: var(--card);
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  #chakra {
+    max-width: 160px;
+  }
+}
+
+/* Phone screens: up to 600px wide */
+@media (max-width: 600px) {
+  .grid,
+  .photo-gallery,
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding-left: 5vw;
+    background-image: none;
+  }
+}

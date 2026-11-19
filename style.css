@@ -657,7 +657,7 @@ output {
 /* ---------- 10. FOOTER ---------- */
 footer {
   padding: 28px 5vw 28px 120px;
-  background: #0f2a50 url("../img/logo.svg") no-repeat 5vw center;
+  background: #0f2a50 url("logo.svg") no-repeat 5vw center;
   background-size: 56px;
   color: #e8ecf4;
 }
